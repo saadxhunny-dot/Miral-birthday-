@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Miral</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;overflow:hidden;font-family:Georgia,'Times New Roman',serif;background:linear-gradient(135deg,#ffd6e7,#f9c5ff,#d8c7ff);color:#7b2859;display:flex;align-items:center;justify-content:center}
+.glow{position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,#fff8 0,transparent 55%);pointer-events:none}
+.card{position:relative;z-index:2;width:min(90vw,440px);padding:30px 24px;border:2px solid #fff9;border-radius:30px;text-align:center;background:#fff8;box-shadow:0 20px 60px #9b4b8060;backdrop-filter:blur(8px);animation:pop .9s ease both}
+h1{font-size:clamp(2.2rem,10vw,3.5rem);margin:8px 0;color:#d63384;text-shadow:0 3px 0 #fff;animation:heartbeat 1.7s infinite}
+h2{font-size:1.25rem;margin:8px 0 18px}
+p{font-size:1.06rem;line-height:1.65;margin:12px 0}
+.cake{font-size:3.2rem;animation:bob 2s ease-in-out infinite}
+button{border:0;border-radius:999px;padding:13px 22px;background:#e84393;color:white;font-size:1rem;font-weight:bold;box-shadow:0 7px 18px #e8439355;cursor:pointer;margin-top:10px}
+#secret{display:none;margin-top:15px;padding:12px;border-radius:18px;background:#fff9;animation:pop .5s ease}
+.heart{position:absolute;bottom:-50px;z-index:1;animation:float linear infinite;opacity:.8}
+.balloon{position:absolute;bottom:-130px;font-size:2.8rem;animation:float linear infinite}
+.spark{position:absolute;top:-20px;animation:fall linear infinite;opacity:.8}
+@keyframes pop{from{transform:scale(.82);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes float{to{transform:translateY(-125vh) rotate(25deg)}}
+@keyframes fall{to{transform:translateY(115vh) rotate(300deg)}}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="card">
+  <div class="cake">🎂💗🎀</div>
+  <div style="letter-spacing:3px;font-size:.8rem">A LITTLE SURPRISE FOR</div>
+  <h1>MIRAL</h1>
+  <h2>Happy Birthday, Meri Princess 👑</h2>
+  <p>Allah apww ko hamesha khush rakhe, apww ki har achi dua qabool ho aur apww ki smile hamesha aise hi pyari rahe 🤍✨</p>
+  <p>Apww mujhe <b>kharoos uncle</b> bolati ho 😂😭 aur main apww ko apni princess kehta hoon 🎀 Humari cute si laraiyan aur nok jhok mere liye bohat special hain 💞</p>
+  <button onclick="document.getElementById('secret').style.display='block';this.textContent='Awww 💗'">Tap for one more surprise 💌</button>
+  <div id="secret"><p><b>Meri Jaan ❤️</b><br>Apww hamesha khush raho aur khoob smile karo. Happy Birthday meri Miral 🫶🏻💋</p><div style="font-size:1.8rem">💗 🫂 💗</div></div>
+</div>
+<script>
+const symbols=['💗','💕','💖','💘','✨','🌸','🎀'];
+for(let i=0;i<28;i++){let e=document.createElement('div');e.className='heart';e.textContent=symbols[Math.floor(Math.random()*symbols.length)];e.style.left=Math.random()*100+'vw';e.style.animationDuration=(7+Math.random()*10)+'s';e.style.animationDelay=(-Math.random()*15)+'s';e.style.fontSize=(16+Math.random()*22)+'px';document.body.appendChild(e)}
+for(let i=0;i<9;i++){let e=document.createElement('div');e.className='balloon';e.textContent=['🎈','🎈','💝'][i%3];e.style.left=(i*12+Math.random()*5)+'vw';e.style.animationDuration=(12+Math.random()*9)+'s';e.style.animationDelay=(-Math.random()*18)+'s';document.body.appendChild(e)}
+for(let i=0;i<18;i++){let e=document.createElement('div');e.className='spark';e.textContent=['✨','✦','💫'][i%3];e.style.left=Math.random()*100+'vw';e.style.animationDuration=(6+Math.random()*8)+'s';e.style.animationDelay=(-Math.random()*12)+'s';document.body.appendChild(e)}
+</script>
+</body>
+</html>
